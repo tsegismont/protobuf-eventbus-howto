@@ -158,7 +158,7 @@ Then start the receiver:
 
 [source,shell]
 ----
-java -Djava.net.preferIPv4Stack=true -jar target/protobuf-eventbus-howto-1.0.0-SNAPSHOT-fat.jar run io.vertx.howtos.protobuf.eventbus.ReceiverVerticle -cluster
+java -Djava.net.preferIPv4Stack=true -jar target/protobuf-eventbus-howto-1.0.0-SNAPSHOT-fat.jar io.vertx.howtos.protobuf.eventbus.ReceiverVerticle -cluster
 ----
 
 When it is ready, you will see: `INFO: Succeeded in deploying verticle`.
@@ -167,7 +167,7 @@ Now start the sender in another terminal:
 
 [source,shell]
 ----
-java -Djava.net.preferIPv4Stack=true -jar target/protobuf-eventbus-howto-1.0.0-SNAPSHOT-fat.jar run io.vertx.howtos.protobuf.eventbus.SenderVerticle -cluster
+java -Djava.net.preferIPv4Stack=true -jar target/protobuf-eventbus-howto-1.0.0-SNAPSHOT-fat.jar io.vertx.howtos.protobuf.eventbus.SenderVerticle -cluster
 ----
 
 When it is ready, you will see: `INFO: Succeeded in deploying verticle`.

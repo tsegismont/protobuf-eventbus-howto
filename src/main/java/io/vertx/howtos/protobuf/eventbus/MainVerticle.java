@@ -1,12 +1,15 @@
 package io.vertx.howtos.protobuf.eventbus;
 
-import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Future;
+import io.vertx.core.VerticleBase;
 
-public class MainVerticle extends AbstractVerticle {
+public class MainVerticle extends VerticleBase {
 
   @Override
-  public void start() throws Exception {
-    vertx.deployVerticle(new ReceiverVerticle());
-    vertx.deployVerticle(new SenderVerticle());
+  public Future<?> start() {
+    return Future.join(
+      vertx.deployVerticle(new ReceiverVerticle()),
+      vertx.deployVerticle(new SenderVerticle())
+    );
   }
 }
